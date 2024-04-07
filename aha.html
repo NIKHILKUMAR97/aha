@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            position: relative;
+            background-color: #1d1e20;
+            font-family: sans-serif;
+        }
+        .navbar{
+            width: 100%;
+            height: auto;
+            margin: 0 0;
+            padding: 12px 25px;
+            position: fixed;
+            display: flex;
+            background: rgb(43, 37, 36);
+            background: linear-gradient(0deg, rgba(31, 28, 27, 0) 0%, rgba(34, 31, 30, 0.927)60%);
+            z-index: 5;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo{
+            height: 50px;
+            
+        }
+        .headings{
+            margin-top: 10px;
+            display: flex;
+            list-style: none;
+            color: #fff;
+        }
+        .nitems a{
+            text-decoration: none;
+            margin-left: 20px;
+            text-transform: capitalize;
+            color: white;
+            opacity: 0.9;
+        }
+        .rtcontainer{
+            display: flex;
+            margin-left: auto;
+            padding: 0 0 0 8px;
+    
+        }
+        .search-box{
+            border: none;
+            border-bottom: 1px solid #aaa;
+            background: transparent;
+            outline: none;
+            height: 30px;
+            color: #fff;
+            width: 250px;
+            text-transform: capitalize;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.5s;
+        }
+        .search-box:focus{
+            width: 450px;
+            border-color: rgb(43, 37, 36);
+        }
+      .subbtn{
+        background: orangered;
+        font-weight: 700;
+        height: 30px;
+        padding: 0 20px;
+        color: #fff;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 12px;
+
+      }
+      .log-in{
+        color: #fff;
+        opacity: 0.9;
+        /* text-transform: uppercase; */
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+
+      }
+      .slidershow{
+        position: relative;
+        max-width: 48rem;
+        margin: 0 auto;
+      }
+      .slider{
+        display: flex;
+        aspect-ratio: 16/9;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        box-shadow: 0 1.5rem 3rem --0.75rem hsla(0, 0%, 0%, 0.25);
+        border-radius: 0.5rem;
+      }
+      .slider img{
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: cover;
+
+      }
+      .slidenav{
+        display: flex;
+        column-gap: 1rem;
+        position: absolute;
+        bottom: 1.25rem;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 1;
+  }
+
+  .slidenav a{
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+  }
+  .slidenav a:hover{
+    opacity: 1;
+  }
+  .glass{
+    color: #fff;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+  }
+  .user{
+    height: 33px;
+    width: 33px;
+    display: flex;
+    text-align: center;
+  }
+  .slides{
+    background-image: url("aha/slide3.jpg");
+    background-size: cover;
+    height: 450px;
+
+
+  }
+  h2{
+    font-size: 24px;
+    text-transform: capitalize;
+    padding: 16px 32px 0px;
+    margin: 8px 0px 0px;
+  }
+  .moviesection{
+    display: flex;
+    gap: 10px;
+  }
+  .box{
+    border: 2px solid black;
+    height: 240px;
+    width: 160px;
+  }
+   /* .box-img{
+    height: 200px;
+    width: 100px;
+  }  */
+  p{
+    color: #fff;
+  }
+  h3{
+    font-size: 24px;
+    text-transform: capitalize;
+    padding: 16px 32px 0px;
+    margin: 8px 0px 0px;
+    margin-top: 35px;
+  }
+  .rtshow{
+    display: flex;
+    gap: 10px;
+
+  }
+  img:hover{
+    transform: scale(1.2);
+  }
+  h1{
+    font-size: 24px;
+    color: #fff;
+    margin: 8px 0px 0px;
+    padding: 16px 32px 0px;
+    text-transform: capitalize;
+  }
+  .tshows{
+    display: flex;
+    gap: 15px;
+  }
+  .originals{
+    display: flex;
+    gap: 10px;
+  }
+  .logo2{
+    height: 60px;
+    width: 113px;
+  }
+  section{
+    height: 405px;
+    width: 100vw;
+    padding: 0px 11px 6px;
+    margin: 50px;
+  
+  }
+  .footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,auto));
+    gap: 2.5rem;
+    /* position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+
+  }
+  .footer-content h4{
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+        
+  .footer-content li{
+    margin-bottom: 10px;
+    list-style-type: none;
+    
+  }
+  .footer-content li a{
+    display: block;
+    color: rgb(131, 120, 118) ;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-decoration: none;
+    
+
+  }
+  .footer-content p{
+    font-size: 16px;
+    line-height: 26px;
+    margin: 20px 0;
+    text-transform: capitalize;
+  }
+  .icons a{
+    display: inline-block;
+    font-size: 32px;
+    margin-right: 17px;
+    transition: all .40s ease;
+    color: #d6d6d6;
+  }
+  .icons a:hover{
+    color: orangered;
+    transform: scale(1.5);
+  }
+  .footer-content h5{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .ladies{
+    display: flex;
+    gap: 10px;
+  }
+  .kids{
+    display: flex;
+    gap: 10px;
+  }
+  .actors{
+    display: flex;
+    gap: 10px;
+  }
+  h5{
+    margin: 15px;
+  }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="./aha/aha_logo.png" class="logo" alt="">
+        <ul class="headings">
+            <li class="nitems"><a href="#">Home</a></li>
+            <li class="nitems"><a href="#">Movies</a></li>
+            <li class="nitems"><a href="#">Shows</a></li>
+            <li class="nitems"><a href="#">Watch for Free</a></li>
+            <li class="nitems"><a href="#">Offers</a></li>
+            <li class="nitems"><a href="#">My aha</a></li>
+        </ul>
+        <div class="rtcontainer">
+            <input type="text" class="search-box" placeholder="search title, movie or cast">
+            <div class="glass">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+            <button class="subbtn" >subscribe now</button>
+           <div class="user">
+            <i style="width: 33px; height: 33px;" class="fa-solid fa-user"></i>
+          </div>
+            <a href="#" class="log-in">sign in</a>
+        </div>
+    </div>
+    <!-- <section class="container">
+        <div class="slidershow">
+            <div class="slider">
+                <img id="slide1" src="./aha/slide1.jpg" alt="">
+                <img id="slide2" src="./aha/slide2.jpg" alt="">
+                <img id="slide3" src="./aha/slide3.jpg" alt="">
+                <img id="slide4" src="./aha/slide4.jpg" alt="">
+                <img id="slide5" src="./aha/slide5.jpg" alt="">
+                <img id="slide6" src="./aha/slide6.jpg" alt="">
+                <img id="slide7" src="./aha/slide7.jpg" alt="">
+            </div>
+            <div class="slidenav">
+                <a href="slide1"></a>
+                <a href="slide2"></a>
+                <a href="slide3"></a>
+                <a href="slide4"></a>
+                <a href="slide5"></a>
+                <a href="slide6"></a>
+                <a href="slide7"></a>
+                
+            </div> -->
+            <div class="slides">
+
+            </div>
+            <h2 style="color: #fff;">top aha orginal shows | first ep free</h2>
+            <div class="moviesection">
+                <div class="box1 box"><img height="240px" width="160px" src="./aha/f1.jpg"><p>3 roses</p></div>
+                <div class="box2 box"><img height="240px" width="160px" src="./aha/f2.jpg"><p>sin</p></div>
+                <div class="box3 box"><img height="240px" width="160px" src="./aha/f3.jpg"><p>arthamindha arun kumar</p></div>
+                <div class="box4 box"><img height="240px" width="160px" src="./aha/f4.jpg"><p>newsense</p></div>
+                <div class="box5 box"><img height="240px" width="160px" src="./aha/f5.jpg"><p>agent anand santhosh</p></div>
+                <div class="box6 box"><img height="240px" width="160px" src="./aha/f6.jpg"><p>geetha subramanyam-3</p></div>
+                <div class="box7 box"><img height="240px" width="160px" src="./aha/f7.jpg"><p>kudi yedumithey</p></div>
+                <div class="box8 box"><img height="240px" width="160px" src="./aha/f8.jpg"><p>papam pasivadu</p></div>
+            </div>
+            
+            <h3 style="color: #fff;">reality and talk show</h3>
+            <div class="rtshow">
+                <div class="rtbox"><img width="212px" height="119px" src="./aha/r1.jpg"><p>comedy stock exchange</p></div>
+                <div class="rtbox"><img width="212px" height="119px" src="./aha/r2.jpg"><p>unstoppable with nbk</p></div>
+                <div class="rtbox"><img width="212px" height="119px" src="./aha/r3.jpg"><p>family dhamak</p></div>
+                <div class="rtbox"><img width="212px" height="119px" src="./aha/r4.jpg"><p>telugu indian idol</p></div>
+                <div class="rtbox"><img width="212px" height="119px" src="./aha/r5.jpg"><p>chef manthra</p></div>
+                <div class="rtbox"><img width="212px" height="119px" src="./aha/r6.jpg"><p>super women</p></div>
+                
+            </div>
+            <h1>trending top 10</h1>
+            <div class="tshows">
+              <div class="tbox"><img width="212" height="380" src="./aha/t1.jpg"></div>
+              <div class="tbox"><img width="212" height="380" src="./aha/t2.jpg"></div>
+              <div class="tbox"><img width="212" height="380" src="./aha/t3.jpg"></div>
+              <div class="tbox"><img width="212" height="380" src="./aha/t4.jpg"></div>
+              <div class="tbox"><img width="212" height="380" src="./aha/t5.jpg"></div>
+              <div class="tbox"><img width="212" height="380" src="./aha/t6.jpg"></div>
+            </div>
+            <h2 style="color:#fff ; font-size: 24px;">aha Originals</h2>
+            <div class="originals">
+              <div class="obox"><img height="408" width="272" src="./aha/o1.jpg" alt=""></div>
+              <div class="obox"><img height="408" width="272" src="./aha/o2.jpg" alt=""></div>
+              <div class="obox"><img height="408" width="272" src="./aha/o3.jpg" alt=""></div>
+              <div class="obox"><img height="408" width="272" src="./aha/o4.jpg" alt=""></div>
+              <div class="obox"><img height="408" width="272" src="./aha/o5.jpg" alt=""></div>
+            </div>
+            <h2 style="color:#fff ; font-size: 24px;">Leading ladies</h2>
+            <div class="ladies">
+              <div class="lbox"><img height="240" width="160" src="./aha/l1.jpg" alt=""></div>
+              <div class="lbox"><img height="240" width="160" src="./aha/l2.jpg" alt=""></div>
+              <div class="lbox"><img height="240" width="160" src="./aha/l3.jpg" alt=""></div>
+              <div class="lbox"><img height="240" width="160" src="./aha/l4.jpg" alt=""></div>
+              <div class="lbox"><img height="240" width="160" src="./aha/l5.jpg" alt=""></div>
+              <div class="lbox"><img height="240" width="160" src="./aha/l6.jpg" alt=""></div>
+              <div class="lbox"><img height="240" width="160" src="./aha/l7.jpg" alt=""></div>
+              <div class="lbox"><img height="240" width="160" src="./aha/l8.jpg" alt=""></div>
+            </div>
+            <h2 style="color:#fff ; font-size: 24px;">aha kids</h2>
+            <div class="kids">
+              <div class="kbox"><img height="240" width="160" src="./aha/k1.jpg" alt=""></div>
+              <div class="kbox"><img height="240" width="160" src="./aha/k2.jpg" alt=""></div>
+              <div class="kbox"><img height="240" width="160" src="./aha/k3.jpg" alt=""></div>
+              <div class="kbox"><img height="240" width="160" src="./aha/k4.jpg" alt=""></div>
+              <div class="kbox"><img height="240" width="160" src="./aha/k5.jpg" alt=""></div>
+              <div class="kbox"><img height="240" width="160" src="./aha/k6.jpg" alt=""></div>
+              <div class="kbox"><img height="240" width="160" src="./aha/k7.jpg" alt=""></div>
+              <div class="kbox"><img height="240" width="160" src="./aha/k8.jpg" alt=""></div>
+            </div>
+            <h2 style="color:#fff ; font-size: 24px;">actors(A-Z)</h2>
+            <div class="actors">
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a1.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a2.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a3.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a4.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a5.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a6.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a7.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a8.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a9.jpg" alt=""></div>
+              <div class="abox"><img style="border: 1px solid transparent; border-radius: 100px;" height="130" width="130" src="./aha/a10.jpg" alt=""></div>
+            </div>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+           <section class="footer">
+            <div class="footer-content">
+              <img src="./aha/aha_logo.png" class="logo2" alt="">
+              <p>connect with us</p>
+
+              <div class="icons">
+                <a href="#"><i class='bx bxl-instagram' ></i></a>
+                <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                <a href="#"><i class='bx bxl-twitter' ></i></a>
+
+          
+              </div>
+
+              <p>download aha moblie app</p>
+              <div class="get">
+                <img src="./aha/gp.svg" alt="">
+                <img src="./aha/as.svg" alt="">
+              </div>
+              <h5 style="color: #fff;">contantus:mahankalinikhil1997@gmail.com</h5>
+            </div>
+            <div class="footer-content">
+              <h4>popular telugu movies</h4>
+              <li><a href="#">masooda</a></li>
+              <li><a href="#">sardar</a></li>
+              <li><a href="#">ori devuda</a></li>
+              <li><a href="#">swathi muthayam</a></li>
+              <li><a href="#">dj tillu</a></li>
+            </div>
+            <div class="footer-content">
+              <h4>must watch movies</h4>
+              <li><a href="#">hidimbha</a></li>
+              <li><a href="#">samajavargamana</a></li>
+              <li><a href="#">intinti ramayanam</a></li>
+              <li><a href="#">sathi gani rendu ekaralu</a></li>
+              <li><a href="#">das ka dhamki</a></li>
+            </div>
+            <div class="footer-content">
+              <h4>geners</h4>
+              <li><a href="#">telugu drama movies</a></li>
+              <li><a href="#">telugu comedy movies</a></li>
+              <li><a href="#">telugu action movies</a></li>
+              <li><a href="#">telugu romance movies</a></li>
+            </div>
+            <div class="footer-content">
+              <h4>learn more</h4>
+              <li><a href="#">view plan</a></li>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">FAQS/help</a></li>
+              <li><a href="#">privacy policies</a></li>
+              <li><a href="#">terms of services</a></li>
+              <li><a href="#">grivance redressal</a></li>
+              <li><a href="#">blog</a></li>
+            </div>
+
+           </section>
+           
+        
+
+        <!-- </div> -->
+
+    <!-- </section> -->
+</body>
+</html>
